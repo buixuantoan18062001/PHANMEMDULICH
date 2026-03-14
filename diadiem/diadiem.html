@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Danh Sách Địa Điểm</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../diadiem/diadiem.css">
+
+</head>
+
+<body>
+
+<!-- Menu -->
+<nav class="navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a id="logDiaDiem"><i class="fa fa-map-marker"></i></a>
+        <a id="menuLogo" class="navbar-brand" href="#">Danh Sách Địa Điểm</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="../map-admin/index.html">Trang Chủ</a></li>
+        <li><a href="../user/user.html">Danh Sách Người Dùng</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../login/register.html"><span class="glyphicon glyphicon-user"></span>Đăng Ký</a></li>
+        <li><a href="../login/login.html"><span class="glyphicon glyphicon-log-in"></span>ĐĂng Nhập</a></li>
+      </ul>
+    </div>
+  </nav>
+<!-- Menu -->
+
+    <br>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Thêm Địa Điểm
+    </button>
+    <br>
+    <br>
+
+    <div class="container">
+        <!--POST Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Form Thêm Địa Điểm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- From -->
+                        <form class="form-user">
+                            <div class="form-group">
+                                <label>name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label>address</label>
+                                <input type="text" class="form-control" name="address" placeholder="Enter address">
+                            </div>
+                            <div class="form-group">
+                                <label>address_link</label>
+                                <input type="text" class="form-control" name="address_link"
+                                    placeholder="Enter address_link">
+                            </div>
+                            <div class="form-group">
+                                <label>image_link</label>
+                                <input type="text" class="form-control" name="image_link"
+                                    placeholder="Enter image_link">
+                            </div>
+                            <div class="form-group">
+                                <label>website</label>
+                                <input type="text" class="form-control" name="website" placeholder="Enter website">
+                            </div>
+                            <div class="form-group">
+                                <label>sodienthoai</label>
+                                <input type="number" class="form-control" name="sodienthoai"
+                                    placeholder="Enter sodienthoai">
+                            </div>
+                            <div class="form-group">
+                                <label>latlong</label>
+                                <input type="text" class="form-control" name="latlong" placeholder="Enter latlong">
+                            </div>
+                            <!-- weather  -->
+                            <div class="form-group">
+                                <label>weather</label>
+                                <div class="radio">
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="weather" checked="checked" value="Trời nắng">Trời nắng</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="weather" value="Trời mây">Trời mây</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="weather" value="Trời mưa">Trời mưa</label>
+                                </div>
+                            </div>
+                            <!-- Ranking  --> 
+                            <div class="form-group">
+                                <label>ranking</label>
+                                <input type="text" class="form-control" name="ranking"
+                                    placeholder="Enter ranking">
+                            </div>
+                            <!-- Ranking  --> 
+                            <!-- Time  -->
+                            <div class="form-group">
+                                <label>day_or_night</label>
+                                <div class="radio">
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="day_or_night" checked="checked" value="Ngày">Ngày</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="day_or_night" value="Đêm">Đêm</label>
+                                </div>
+                            </div>
+                            <!-- Time -->
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                        <!-- From -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+
+<!-- /////////////////////////////////////////////////////// -->
+        <!-- Update Modal -->
+        <div id="myEditModal" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Form Sửa Địa Điểm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- From -->
+                        <form class="form-user">
+                            <div class="form-group">
+                                <label>name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label>address</label>
+                                <input type="text" class="form-control" name="address" placeholder="Enter address">
+                            </div>
+                            <div class="form-group">
+                                <label>address_link</label>
+                                <input type="text" class="form-control" name="address_link"
+                                    placeholder="Enter address_link">
+                            </div>
+                            <div class="form-group">
+                                <label>image_link</label>
+                                <input type="text" class="form-control" name="image_link"
+                                    placeholder="Enter image_link">
+                            </div>
+                            <div class="form-group">
+                                <label>website</label>
+                                <input type="text" class="form-control" name="website" placeholder="Enter website">
+                            </div>
+                            <div class="form-group">
+                                <label>sodienthoai</label>
+                                <input type="number" class="form-control" name="sodienthoai"
+                                    placeholder="Enter sodienthoai">
+                            </div>
+                            <div class="form-group">
+                                <label>latlong</label>
+                                <input type="text" class="form-control" name="latlong" placeholder="Enter latlong">
+                            </div>
+                            <!-- weather  -->
+                            <div class="form-group">
+                                <label>weather</label>
+                                <div class="radio">
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="weather" checked="checked" value="Trời nắng">Trời nắng</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="weather" value="Trời mây">Trời mây</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="weather" value="Trời mưa">Trời mưa</label>
+                                </div>
+                            </div>
+                            <!-- Weather  -->
+
+                            <!-- Ranking  -->                           
+                            <div class="form-group">
+                                <label>ranking</label>
+                                <input type="text" class="form-control" name="ranking"
+                                    placeholder="Enter ranking">
+                            </div>
+                            <!-- Ranking  -->     
+
+                            <!-- Time  -->
+                            <div class="form-group">
+                                <label>day_or_night</label>
+                                <div class="radio">
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="day_or_night" checked="checked" value="Ngày">Ngày</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="day_or_night" value="Đêm">Đêm</label>
+                                </div>
+                            </div>
+                            <!-- Time -->
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                        <!-- From -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+    </div>
+
+    <div>
+        <table id="table-user" class="table table-bordered">
+            <tr>
+                <th>name</th>
+                <th>address</th>
+                <th>address_link</th>
+                <th>image_link</th>
+                <th>website</th>
+                <th>sodienthoai</th>
+                <th>latlong</th>
+                <th>weather</th>
+                <th>ranking</th>
+                <th>day_or_night</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="./diadiem.js"></script>
+</body>
+
+</html>

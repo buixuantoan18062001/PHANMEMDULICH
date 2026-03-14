@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./edituser.css">
+    <title>Document</title>
+</head>
+<body>
+                        
+
+                <div id="editUser" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle" style="font-weight: bold;">Thông Tin Người Dùng</h5>
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button> -->
+                    </div>
+                    <div class="modal-body">
+                        <!-- From -->
+                        <form class="form-user">
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-12">
+                                    <label>Họ và Tên</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Enter name">
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <label>Giới Tính</label>
+                                    <input type="text" class="form-control" name="sex" placeholder="Enter sex">                                
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label>sex</label>
+                                <input type="text" class="form-control" name="sex" placeholder="Enter sex">
+                            </div> -->
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label>Ngày Sinh</label>
+                                    <input type="date" class="form-control" name="dateOfBirth" placeholder="Enter dateOfBirth">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-12">
+                                    <label>Số Điện Thoại</label>
+                                    <input type="number" class="form-control" name="phone" placeholder="Enter phone">                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter email">                             
+                                </div>
+                            </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-12">
+                                <label>Tài Khoản</label>
+                                <input type="text" class="form-control" name="username" placeholder="Enter username">
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label>Mật Khẩu</label>
+                                <input type="password" class="form-control" name="password" placeholder="Enter password">                               
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Địa Điểm</label>
+                                <input type="text" class="form-control" name="address" placeholder="Enter address">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Quyền</label>
+                                <input type="text" class="form-control" name="role" placeholder="Enter role">
+                            </div>
+                        </div>
+
+                            <!-- color  -->
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                <label>Chọn Màu</label>
+                                <div id="colorRadio" class="radio">
+                                    <label class="checkbox-inline">
+                                        <input id="radioDau" type="radio" name="color" checked="checked" value="red"><p id="radionameDau">red</p></label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="color" value="green">green</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="color" value="yellow">yellow</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="color" value="blue">blue</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="color" value="orange">orange</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="color" value="white">white</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" name="color" value="black">black</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- color  -->
+
+                            <!-- button -->
+                            <button id="btnSave" type="submit" class="btn btn-primary">Save</button>                     
+                        </form>
+                        <!-- From -->
+                    </div>
+                </div>
+            </div>
+<script src="./edituser.js"></script>
+
+</body>
+</html>

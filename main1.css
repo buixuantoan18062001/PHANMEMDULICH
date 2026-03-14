@@ -1,0 +1,155 @@
+
+#map {
+  /* top: 18%;
+  left: 24%; */
+  top: 19%;
+  left: 24%;
+  width: 50.5%;
+  height: 78%;
+  padding: 5px 5px 5px 5px;
+  background: hsla(0, 0%, 100%, .1);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, .2);
+  border: 2px solid hsla(0, 0%, 100%, .2);
+  z-index: 1;
+}
+
+
+
+#textDemo {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 100000;
+  left: 60%;
+  top: 80%;
+  cursor: pointer;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#latlng {
+  width: 225px;
+}
+
+#panel {
+  height: 100%;
+  width: null;
+  background-color: white;
+  position: fixed;
+  overflow-x: hidden;
+  transition: all .2s ease-out;
+  left: 50px;
+  transition: 2s;
+  background: white;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, .2);
+  border: 2px solid hsla(0, 0%, 100%, .2);
+}
+
+.open {
+  width: 20%;
+  z-index: 2;
+}
+
+
+/* Styling for place details */
+.hero {
+  width: 100%;
+  height: auto;
+  max-height: 166px;
+  display: block;
+}
+
+.place,
+p {
+  font-family: 'open sans', arial, sans-serif;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.details {
+  color: darkslategrey;
+}
+
+a {
+  text-decoration: none;
+  color: cadetblue;
+}
+
+#sidebar.show {
+  display: block;
+}
+
+#sidebar.hide {
+  display: none;
+}
+
+#sidebar {
+  flex-basis: 15rem;
+  flex-grow: 1;
+  padding: 1rem; 
+  /*  */
+  width: 24.3%;
+  height: 78%;
+  left: 75.2%;
+  top: 19%;
+
+  box-sizing: border-box;
+  overflow: auto;
+  border: 2px solid black;
+  background-color: white;
+  position: absolute;
+  z-index: 1000;
+}
+
+#lichtrinh123.show {
+  display: block;
+}
+
+#lichtrinh123.hide {
+  display: none;
+}
+
+
+
+/* Lịch Trình */
+#lichtrinh123 {
+  top: 28%;
+  left: 24.9%;
+  width: 48.9%;
+  height: 53%;
+  position: absolute;
+  border: 3px solid black;
+  overflow: scroll;
+  background-color: white;
+  z-index: 100;
+}
+
+
+#table-lichtrinh {
+  margin-bottom: 60px;
+  background-color: white;
+}
+#tinhTong {
+  width: 100%;
+  height: 10%;
+}
+#tinhTong p{
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+#runTest {
+  background: black;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, .2);
+  border: 2px solid hsla(0, 0%, 100%, .2);
+  margin: 1% 1% 1% 1%;
+}
+

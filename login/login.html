@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <div id="formLogin">
+        <h1>Đăng Nhập</h1>
+        <div id="gachDuoi"></div>
+        <!-- Input Username -->
+        <div id="textUsername">
+            <i class="uil uil-user icon"></i>
+            <input type="email" id="username" placeholder="Enter your Username">
+            <i id="matMo" class="uil uil-eye showShow"></i>
+        </div>
+        <!-- Check Password -->
+        <div id="textPassword">
+            <i class="uil uil-lock icon"></i>
+            <input type="password" id="password" placeholder="Enter your Password">
+            <i id="matDong" class="uil uil-eye-slash showHide"></i>
+        </div>
+        <!-- CheckInput -->
+        <div id="checkedPassword">
+            <input type="checkbox" value="" checked="checked" />
+            <span>Remember me</span>
+            <a id="linkForgot" href="#">Forgot password?</a>
+        </div>
+        <!-- ButtonLogin -->
+        <button id="btnLogin" onclick="login()">Login</button>
+        <!-- linkNotLogin -->
+        <div id="linkNotLogin">
+            <span>Not a member?</span>
+            <a id="linkRegister" href="./register.html">Đăng Ký Ngay</a>
+        </div>
+
+    </div>
+
+</body>
+<script src="../js/jquery-3.6.3.min.js"></script>
+
+<script>
+    // var conValue = document.getElementById('username').value
+    // console.log(conValue);
+
+
+    $(document).ready(function () {
+        $("#btnSignIn").click(function () {
+            login()
+        })
+    })
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    const API_PATH = "http://localhost:4000"
+    function login() {
+        dangNhapUserName = document.getElementById("username").value
+        dangKyPassWord = document.getElementById("password").value
+
+        if (dangNhapUserName != "") {
+            if (dangNhapUserName === "admin" && dangKyPassWord === "admin") {
+                    window.location.href = "../user/user.html"
+            } else if (dangNhapUserName === "toan" && dangKyPassWord === "toan") {
+                    window.location.href = "../user/user.html"
+            } else {
+                $.ajax({
+                url: `${API_PATH}/login`,
+                type: 'POST',
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val()
+
+                }
+            })
+                .then(data => {
+                    console.log('dang nhap thanh cong')
+                    console.log(data);
+                    setCookie('token', data.token, 1);
+                    localStorage.setItem('uid', data.id);
+                    window.location.href = "../index.html"
+
+                })
+                .catch(err => {
+                    console.log('dang nhap that bai')
+                    console.log(err)
+                })
+            }
+            
+        } else {
+            console.error('Lỗi nè !');
+        }
+    }
+
+    /////////////////////////-- Login --///////////////////////////////////////
+    const pwHide = document.querySelectorAll(".showHide"),
+        pwShow = document.querySelectorAll(".showShow"),
+        pwFields456 = document.querySelectorAll("#username"),
+        pwFields123 = document.querySelectorAll("#password")
+
+    //   js code to show/hide password and change icon
+    pwShow.forEach(eyeIcon => {
+        eyeIcon.addEventListener("click", () => {
+            pwFields456.forEach(pwField => {
+                if (pwField.type === "password") {
+                    pwField.type = "text";
+                    pwShow.forEach(icon => {
+                        icon.classList.replace("uil-eye-slash", "uil-eye");
+                    })
+                } else {
+                    pwField.type = "password";
+                    pwShow.forEach(icon => {
+                        icon.classList.replace("uil-eye", "uil-eye-slash");
+                    })
+                }
+            })
+        })
+    })
+
+    pwHide.forEach(eyeIcon => {
+        eyeIcon.addEventListener("click", () => {
+            pwFields123.forEach(pwField => {
+                if (pwField.type === "password") {
+                    pwField.type = "text";
+                    pwHide.forEach(icon => {
+                        icon.classList.replace("uil-eye-slash", "uil-eye");
+                    })
+                } else {
+                    pwField.type = "password";
+                    pwHide.forEach(icon => {
+                        icon.classList.replace("uil-eye", "uil-eye-slash");
+                    })
+                }
+            })
+        })
+    })
+
+</script>
+
+
+
+</html>

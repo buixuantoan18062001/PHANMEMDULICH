@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <title>Trang Chủ</title>
+
+  <!-- map css -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="./map.css">
+  <link rel="stylesheet" href="./menu.css">
+  <link rel="stylesheet" href="./main1.css">
+
+</head>
+
+<body onload="startTime()">
+  
+  <div id="timer"></div>
+
+  <div id="panel"></div>
+
+  <!-- Map appears here -->
+
+    <div id="map"></div>
+  
+
+  <div id="sidebar" class="hide">
+    <p>Tổng khoảng cách: <span id="kilomet"></span></p>
+    <div id="banchiduong"></div>
+  </div>
+
+
+
+  <!-- Menu Bar -->
+  <div class="stores-list-container">
+    <div class="stores-list">
+      <div class="store-container">
+
+      </div>
+    </div>
+  </div>
+<!-- Menu Bar -->
+
+<div id="tabMemu" class="hideTabMenu">
+
+        <!-- <div class="menu">
+            <div class="logo">
+                <a href="#">
+                    <img src="#" alt="">
+                </a>
+            </div>
+        </div> -->
+
+        <div>
+          <a href="#">
+            <button class="logo0 showOpenMenu"><i class="fa fa-bars"></i></button>
+          </a>
+          <a href="#">
+            <button class="logo05 showOpenMenu"><i class="fa fa-close"></i></button>
+          </a>
+           <a href="#">
+                <button class="logo1 showTabMenu"><i class="fa fa-home"></i></button>
+                <div class="logo1div"><span>Trang Chủ</span></div>                 
+            </a>
+
+            <a href="../user/user.html">
+                <button class="logo2 showTabMenu"><i class="fa fa-address-card"></i></button>
+                <div class="logo2div"><span>Quản Lý Người Dùng</span></div>                 
+            </a>
+
+            <a href="#">
+                <button class="logo3 showTabMenu"><i class="fa fa-cog"></i></button>
+                <div class="logo3div"><span>Cài Đặt</span></div>                   
+            </a>
+
+            <a id="buttonThoiTiet" href="#">
+                <button class="logo4 showTabMenu"><i class="fa fa-map-marker"></i></button>
+                <div class="logo4div"><span>Thời Tiết</span></div>                 
+            </a>
+
+            <a class="nutLichTrinh" href="#">
+                <button class="logo5 showTabMenu"><i class="fa fa-map"></i></button>
+                <div class="logo5div"><span>Lịch Trình</span></div>                              
+            </a>
+            
+          <a id="buttonngaydem" href="#">
+              <button class="logo6 showTabMenu"><i class="fa fa-street-view"></i></button>
+              <div class="logo6div"><span>Ngày Đêm</span></div>                              
+          </a>
+          
+          <a id="showmenu" href="#">
+              <button class="logo7 showTabMenu"><i class="fa fa-map-signs"></i></button>
+              <div class="logo7div"><span>Tiện Ích</span></div>                              
+          </a>
+
+          <a id="textMapDem" href="#">
+              <button class="logo8 logo8-show showTabMenu"><i class="fa fa-moon-o"></i></button>
+              <div class="logo8div logo8div-show"><span>Đêm</span></div>                              
+          </a>
+          <a id="textMapNgay" href="#">
+            <button class="logo85 logo85-hide showTabMenu"><i class="fa fa-sun-o"></i></button>
+            <div class="logo85div logo85div-hide"><span>Ngày</span></div>                              
+          </a>
+          <!-- <a href="#">
+              <button class="logo9 showTabMenu"><i class="fa fa-bug"></i></button>
+              <div class="logo9div"><span>Feedback</span></div>                              
+          </a>
+
+          <a href="#">
+              <button class="logo10 showTabMenu"><i class="fa fa-bug"></i></button>
+              <div class="logo10div"><span>Feedback</span></div>                              
+          </a> -->
+
+          <!-- <a href="#">
+              <button class="logo11 showTabMenu"><i class="fa fa-bug"></i></button>
+              <div class="logo11div"><span>Feedback</span></div>                              
+          </a> -->
+
+          <a href="../login/login.html">
+              <button class="logo12 showTabMenu"><i class="fa fa-sign-out"></i></button>
+              <div class="logo12div"><span>Đăng Nhập</span></div>
+            </a>
+        </div>
+</div>
+<!-- Menu Bar -->
+
+<!-- Weather -->
+  <div class="weather">
+    <div><img id="wicon" src="" alt="Weather icon"></div>
+    <div class="cation">
+        <p class="city"></p>
+        <p class="status"></p>
+        <p class="temp"></p>
+    </div>
+</div>
+<!-- Weather -->
+  <div class="menushow">
+    <div class="directions">
+      <form>
+        <div class="form-group">
+          <i class='bx bx-radio-circle-marked'></i>
+          <div class="input_form">
+            <input type="text" id="tu" class="form-control" placeholder="Start position">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="to"><i class='bx bxs-map'></i></label>
+          <div class="input_to">
+            <input type="text" id="den" placeholder="End position" class="form-control">
+          </div>
+
+        </div>
+      </form>
+      <div id="floating-panel">
+        <select id="modes">
+          <option value="" selected>Chọn phương tiện</option>
+          <option value="DRIVING">Đi ô Tô</option>
+          <option value="WALKING">Đi Bộ</option>
+          <option value="BICYCLING">Đi xe máy</option>
+          <option value="TRANSIT">Đi xe buýt</option>
+        </select>
+        <button class="btn-run" onclick="calcRoutes()"><i class='bx bx-run'></i></button>
+        <button id="show-location">Vị trí của tôi</button>
+      </div>
+    </div>
+    <div class="direction">
+      <form>
+        <div class="form-group">
+          <i class='bx bx-radio-circle-marked'></i>
+          <div class="input_form">
+            <input type="text" placeholder="Your position" class="form-control" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="to"><i class='bx bxs-map'></i></label>
+          <div class="input_to">
+            <input type="text" id="to" placeholder="End position" class="form-control">
+          </div>
+
+        </div>
+      </form>
+      <div id="floating-panel">
+        <select id="mode">
+          <option value="" selected>Chọn phương tiện</option>
+          <option value="DRIVING">Đi ô Tô</option>
+          <option value="WALKING">Đi Bộ</option>
+          <option value="BICYCLING">Đi xe máy</option>
+          <option value="TRANSIT">Đi xe buýt</option>
+        </select>
+        <button class="btn-run" onclick="calcRoute()"><i class='bx bx-run'></i></button>
+        <button id="hide-location">Địa chỉ của tôi</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="select_map">
+    <select onchange="timdiadiem(this.value)">
+      <option value="" selected>Chọn một tiện ích</option>
+      <option value="cafe">Quán cà phê</option>
+      <option value="restaurant">Nhà hàng</option>
+      <option value="store">Cửa hàng</option>
+      <option value="gas_station">Trạm Xăng</option>
+      <option value="bank">Ngân hàng</option>
+      <option value="hospital">Bệnh viện</option>
+      <option value="atm">ATM</option>
+      <option value="museum">Bảo tàng</option>
+      <option value="park">Công viên</option>
+      <option value="parking">Bãi đậu xe</option>
+    </select>
+  </div>
+
+  <div class="tabs-map">
+    <div class="tabs-content tabs-content-hide">
+
+
+
+    </div>
+  </div>
+  <!-- Lịch Trình -->
+  
+<!-- nút lịch trình -->
+ 
+
+<!-- Modal -->
+<div id="lichtrinh123" class="hide">
+  <div id="tinhTong">
+    <p>Tổng Số : <span id="tongsoKm">0</span> Km - 
+      <span id="tongsoGio">0</span> Giờ - 
+      <span id="tongsoPhut">0</span> Phút
+    </p>
+  </div>
+  <button id="runTest" style="width: 50px; height: 50px; color: white; font-size: 18px;"><i class="fa fa-map-marker"></i></button>
+  <table id="table-lichtrinh" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>Địa Chỉ</th>
+        <th>Số Km</th>
+        <th>Số Giờ</th>
+        <th>Số Phút</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody id="mylistText">
+
+    </tbody>
+  </table>
+</div>
+
+<!-- Ẩn hiện ngày đêm -->
+<!-- <button id="textMapNgay"></button> -->
+
+<!-- <button id="textMapDem"></button> -->
+
+<!-- <button id="textDemo"></button> -->
+
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAet8Mk1nPvOn_AebLE5ZxXoGejOD8tPzA&libraries=places&callback=initMap">
+  </script>
+    <script src="./map.js"></script>
+
+
+</body>
+
+</html>

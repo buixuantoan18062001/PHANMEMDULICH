@@ -1,0 +1,24 @@
+#editUser{
+    margin-top: 2%;
+    left: 20%;
+    width: 60%;
+    height: 100%;
+}
+#btnSave{
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 96%;
+    height: 100%;
+}
+#colorRadio {
+    margin-left: 20%;
+}
+#radionameDau {
+    margin-top: -4px;
+}
+#radioDau {
+    margin-top: 0px;
+}
+.form-group label{
+    margin-top: 2%;
+}
